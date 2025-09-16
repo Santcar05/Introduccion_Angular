@@ -1,0 +1,17 @@
+<div>
+  <h4>Student Detail Component</h4>
+  <ng-container *ngIf="student">
+    <h5>Detalles del Estudiante</h5>
+    <p>Nombre: {{ student.name }}</p>
+    <p>Apellido: {{ student.lastName }}</p>
+    <p>Edad: {{ student.age }}</p>
+    <p>Email: {{ student.email }}</p>
+    <p>Teléfono: {{ student.phone }}</p>
+    <p>PPA: {{ student.ppa }}</p>
+    <p>Activo: {{ student.activated ? 'Sí' : 'No' }}</p>
+    <p>Fecha Pago: {{ student.fechaPago }}</p>
+  </ng-container>
+  <ng-container *ngIf="!student">
+    <p>Estudiante no encontrado</p>
+  </ng-container>
+</div>

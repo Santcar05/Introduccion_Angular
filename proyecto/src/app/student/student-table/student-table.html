@@ -27,15 +27,17 @@
         <td>{{ student.activated ? 'Sí' : 'No' }}</td>
         <td>{{ student.fechaPago | date : 'shortDate' }}</td>
         <td>
-          <button class="btn btn-primary" (click)="editStudent(student)">Editar</button>
+          <button class="btn btn-primary" (click)="mostrarEstudiente(student)">Editar</button>
         </td>
       </ng-container>
     </tr>
   </tbody>
 </table>
-
+<app-student-detail [student]="selectedStudent"></app-student-detail>
+<app-student-form></app-student-form>
 <!-- 
 - Solo puede  haber una instruccion por etiqueta
 - ng-container es un contenedor de angular para colocar instrucciones, nada visual ni afecta al contenido de la pagina
 - Es mejor usar ngIf que hidden porque ngIf no aparece en el DOM, porque no renderiza el contenido que no cumpleo con el if
+- *ngSwitchCase="jpj" es el nuevo switch para Angular
  -->

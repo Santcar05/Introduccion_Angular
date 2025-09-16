@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Student } from '../student';
-
+import { StudentDetail } from '../student-detail/student-detail';
+import { StudentForm } from '../student-form/student-form';
 @Component({
   selector: 'app-student-table',
-  imports: [CommonModule],
+  imports: [CommonModule, StudentDetail, StudentForm],
   standalone: true,
   templateUrl: './student-table.html',
   styleUrls: ['./student-table.css'],
@@ -76,5 +77,8 @@ export class StudentTable {
   ];
   editStudent(student: Student) {
     console.log('Editando estudiante', student);
+  }
+  mostrarEstudiente(student: Student) {
+    this.selectedStudent = student;
   }
 }
